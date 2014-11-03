@@ -315,8 +315,8 @@
 		};
 		
 		$scope.save = function(model) {
-			saveFile(config, $scope.changes);
-			$scope.edited = false;
+			// saveFile(config, $scope.changes);
+			// $scope.edited = false;
 					
 		};
 		
@@ -353,28 +353,7 @@
 	});
 
 
-	function saveFile(model, log) {
 
-		if (model.tips) {
-			var destination = 'tips-config.json';
-		} else {
-			var destination = 'routing-config.json';
-		}
-		
-		
-		if(!log) log = "";
-		
-		$.post('update', {
-			destination : destination,
-			file : model,
-			log : log
-		}, function(data) {
-			console.log(data);
-		});
-		
-		
-		
-	}
 	
 	
 	/**
